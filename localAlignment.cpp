@@ -8,6 +8,7 @@
 //gap = -2g
 //dna seq len 5-50
 
+
 //initialize matrix
 
 //fill with appropriate scores

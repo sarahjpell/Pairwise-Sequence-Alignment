@@ -6,19 +6,50 @@
 #include "globalAlignment.h"
 
 #include <iostream>;
+#include <fstream>;
 #include <string>;
 #include <memory>;
 
 using namespace std;
 
 //read in file with sequences
-string inputFile(){
+string inputFile(string f){
+    string line;
+    string seq1;
+    string seq2;
+    int count = 0;
+
+    ifstream file(f);
+    if(file.is_open()){
+        while(getline(file,line)){
+            count++;
+            if(count == 1){
+                seq1 = line;
+            }
+            else if(count == 2){
+                seq2 = line;
+            }
+            else{
+                cout<<"there was more"<<endl<< line << endl;
+            }
+        }
+        file.close();
+        return seq1, seq2;
+    }
+    else{
+        cout<<"unable to find file";
+    }
 
 }
 
 //write output to file
-string outputFile(){
-
+string outputFile(string fileName, string seq){
+    ofstream file(fileName);
+    if(file.is_open()){
+        file<<seq;
+        file.close();
+    }
+    else cout<<"unable to open file";
 }
 
 int main(){
@@ -29,7 +60,7 @@ int main(){
     cout<<"Pairwise Sequence Alignment"<<endl;
     cout<<"What is the name of your file?"<<endl;
     cin>>file;
-
+    inputFile(file);
     //ask if local or global alignment
     while(choice != 1 && choice != 2 && choice != 3){
         cout<<"What would you like to do?"<<endl<<"1. local pairwise alignment"<<endl<<"2. global pairwise alignment"<<endl<<"3. Exit"<<endl<<"Enter a number: ";
