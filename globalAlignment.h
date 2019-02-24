@@ -1,0 +1,8 @@
+//
+// Created by sarah pell on 2/23/2019.
+//
+
+#ifndef SP_PROJECT1_GLOBALALIGNMENT_H
+#define SP_PROJECT1_GLOBALALIGNMENT_H
+
+#endif //SP_PROJECT1_GLOBALALIGNMENT_H

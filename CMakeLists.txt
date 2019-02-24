@@ -3,4 +3,4 @@ project(Pairwise-Sequence-Alignment)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(localAlignment.cpp Main.cpp localAlignment.cpp localAlignment.h)
+add_executable(localAlignment.cpp Main.cpp localAlignment.cpp localAlignment.h globalAlignment.cpp globalAlignment.h)
